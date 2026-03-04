@@ -18,6 +18,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Show directory structure
+        run: ls -R
+
       - name: Build with Maven
         working-directory: demo
         run: mvn test
