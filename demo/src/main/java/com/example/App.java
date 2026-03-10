@@ -8,10 +8,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        App app = new App();
+        int result = app.calc2int(2, 3, CalcInstructionType.ADD);
+        System.out.println(result);
     }
 
-    public static int add(int a, int b) {
-        return a + b;
+    public int calc2int(int a, int b, CalcInstructionType type) {
+        Calculate calculate = new Calculate();
+        CalcResult output = calculate.calc(new Calc2IntDto(a, b), type);
+        return output.getResult();
     }
 }
